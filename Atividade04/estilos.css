@@ -1,0 +1,51 @@
+body {
+	font-family:"Courier New";
+	background-image: url(http://ak0.picdn.net/shutterstock/videos/4865030/thumb/1.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 40px;
+}
+
+label {
+	font-size: 30px
+}
+
+div {
+	text-align: center;
+	border: solid 1px;
+	border-radius: 20px;
+	box-shadow: 10px 10px 10px 5px black;
+	width:300px;
+    height:300px;
+    position: absolute;
+    top: 40%;
+    margin-top:-50px;
+    margin-left:-50px;  
+}
+
+#cad{
+	margin-top: 20px;
+	font-size: 150px;
+}
+
+#list{
+	margin-top: 20px;
+	font-size: 150px;
+}
+
+a{	
+	font-size: 30px;
+}
+
+.cadastrar{
+    left: 30%; 
+}
+
+.listar{
+    left: 55%; 
+}
