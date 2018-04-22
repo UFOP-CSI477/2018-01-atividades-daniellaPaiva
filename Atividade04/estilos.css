@@ -49,3 +49,10 @@ a{
 .listar{
     left: 55%; 
 }
+
+input {
+  border: #000;
+  padding: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
