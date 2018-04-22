@@ -15,7 +15,7 @@ label {
 	font-size: 30px
 }
 
-div {
+.divIndex {
 	text-align: center;
 	border: solid 1px;
 	border-radius: 20px;
@@ -42,17 +42,66 @@ a{
 	font-size: 30px;
 }
 
-.cadastrar{
+#cadastrar{
     left: 30%; 
 }
 
-.listar{
+#listar{
     left: 55%; 
 }
 
-input {
-  border: #000;
-  padding: 10px;
-  font-size: 1.2em;
-  width: 100%;
+
+/* Atividade02.html */
+.place {
+	padding: 10px;
+	font-size: 1.2em;
+  	width: 98%;
+}
+
+.place2 {
+	padding: 10px;
+	font-size: 1.2em;
+  	width: 30%;
+}
+
+.cursos {
+	font-size: 1.2em;
+}
+
+.labelMat {
+	margin-left: 50px;
+
+}
+
+.buttons {
+	font-size: 20px;
+	position: absolute;
+	left: 45%;
+	box-shadow: 10px 10px 10px 5px black;
+	width: 100px;
+	height: 50px;
+}
+
+#voltarB {
+	left: 35%;
+}
+
+#limparB {
+	left: 55%;
+}
+
+/* Atividade03.html */
+table {
+	text-align: center;
+	font-size: 20px;
+	width: 100%;
+}
+
+#cabecalho {
+	font-size: 25px;
+}
+
+#voltarC {
+	margin-top: 30px;
+	left: 45%;
 }

@@ -13,11 +13,11 @@
 			<form method="post">
 		
 				<label>Nome</label>	
-					<input type="text" name="nome" placeholder="Digite seu nome">
+					<input class="place" type="text" name="nome" placeholder="Digite seu nome">
 				<label>Data de Nascimento</label>	
-					<input type="date" name="nascimento">
+					<input class="place" type="date" name="nascimento">
 				<label>Telefone</label>	
-					<input type="text" name="tel" placeholder="Digite seu telefone">
+					<input class="place" type="text" name="tel" placeholder="Digite seu telefone">
 				<br><br>
 
 
@@ -27,22 +27,28 @@
 				<input type="radio" name="genero" id="naobinario" value="NB"> <label for="naobinario">Não binário </label>
 				<br><br>
 
-				<label>Matrícula</label>	<input type="number" name="mat" placeholder="Digite sua matricula">
 				<label for="curso">Curso</label>
-					<select name="curso">
+					<select class="cursos" name="curso">
 						<option value="0">Selecione: </option>
 						<option value="1">Engenharia de Computação</option>
 						<option value="2">Engenharia Elétrica</option>
 						<option value="3">Engenharia de Produção</option>
 						<option value="4">Sistemas de Informação</option>
 					</select>
-					
-				<label>Email</label><input type="email" name="email" placeholder="Digite seu email">
-				<br><br>
-							
 
-				<input type="submit" value="Cadastrar">
-				<input type="reset" value="Limpar">
+				<label class="labelMat" >Matrícula</label>	
+					<input class="place2" type="number" name="mat" placeholder="Digite sua matricula">
+
+				<br>
+
+				<label>Email</label>
+					<input class="place" type="email" name="email" placeholder="Digite seu email">
+					
+				<br><br>
+				
+				<input class="buttons" id="voltarB" type="reset" value="Voltar" onClick="location.href='Atividade01.html'">
+				<input class="buttons" id="cadB" type="submit" value="Cadastrar">
+				<input class="buttons" id="limparB" type="reset" value="Limpar">
 			</form>
 	</body>
 </html>
