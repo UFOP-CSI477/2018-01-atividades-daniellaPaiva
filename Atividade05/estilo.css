@@ -1,0 +1,33 @@
+body {
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#menu {
+	text-align: center;
+	margin-top: 18%;
+}
+
+h1 {
+	font-size: 88px;
+}
+
+a {
+	width: 100px;
+	height: 30px;
+}
+
+#formulario{ text-align: center;}
+
+#header{margin-top: 3%;}
+
+#footer{
+	text-align: right;
+	margin-top: 10%;
+}
+
+.botao{
+	margin-top: 5%;
+}

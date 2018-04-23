@@ -1,44 +1,89 @@
 <!-- 02 - Formulário de cadastro -->
-
-
 <!DOCTYPE html>
 
 <html>
 	<head>
 		<title>Formulário de Cadastro</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap-theme.css">
 	</head>
 	<body>
-		<h1>Formulário de Cadastro</h1>
-			<form method="post">
-		
-				<label>Nome</label>	<input type="text" name="nome" placeholder="Digite seu nome">
-				<label>Data de Nascimento</label>	<input type="date" name="nascimento">
-				<label>Telefone</label>	<input type="text" name="tel" placeholder="Digite seu telefone">
-				<br><br>
+		<div class="container" id="header">
+			<h1 class="page-header">Formulário de Cadastro</h1>
+		</div>
+		<div class="container" id="context">
+			<form>
+				<div class="row">
+					<div class="col-md-6"> 
+						<div class="form-group">
+							<label for="nome">Nome</label>
+					    	<input type="text" class="form-control" id="nome" placeholder="Nome">
+					    </div>
+					</div>
+       				<div class="col-md-2">
+	       				<div class="form-group">
+						    <label for="data">Data de nascimento</label>
+						    <input type="date" class="form-control" id="data" placeholder="">
+						</div>
+					</div>
+				</div>
 
+				<div class="row">
+					<div class="col-md-6"> 
+						<div class="form-group">
+							<label for="email">Email</label>
+					    	<input type="text" class="form-control" id="email" placeholder="Email">
+					    </div>
+					</div>
+       				<div class="col-md-2">
+	       				<div class="form-group">
+						    <label for="tel">Telefone</label>
+						    <input type="number" class="form-control" id="tel" placeholder="( )">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="genero">Gênero</label> <br>
+					<label class="radio-inline"><input type="radio" name="genero" value="F">Feminino</label>
+					<label class="radio-inline"><input type="radio" name="genero" value="M">Masculino</label>
+					<label class="radio-inline"><input type="radio" name="genero" value="NB">Não binário</label>
+				</div>
 
-				<label for="genero">Gênero</label> <br>
-				<input type="radio" name="genero" id="feminino" value="F"> <label for="feminino">Feminino</label> 
-				<input type="radio" name="genero" id="masculino" value="M"> <label for="masculino">Masculino</label> 
-				<input type="radio" name="genero" id="naobinario" value="NB"> <label for="naobinario">Não binário </label>
-				<br><br>
-
-				<label>Matrícula</label>	<input type="number" name="mat" placeholder="Digite sua matricula">
-				<label for="curso">Curso</label>
-					<select name="curso">
-						<option value="0">Selecione: </option>
-						<option value="1">Engenharia de Computação</option>
-						<option value="2">Engenharia Elétrica</option>
-						<option value="3">Engenharia de Produção</option>
-						<option value="4">Sistemas de Informação</option>
-					</select>
-					
-				<label>Email</label><input type="email" name="email" placeholder="Digite seu email">
-				<br><br>
-							
-
-				<input type="submit" value="Cadastrar">
-				<input type="reset" value="Limpar">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group"> 
+							<label for="curso">Curso</label>
+							<select class="form-control" id="curso">
+								<option>Selecione: </option>
+								<option>Engenharia de Computação</option>
+								<option>Engenharia Elétrica</option>
+								<option>Engenharia de Produção</option>
+								<option>Sistemas de Informação</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group"> 
+							<label>Matrícula</label>
+					    	<input type="number" class="form-control" placeholder="">
+						</div>
+					</div>
+				</div>
+				<div class="botao">				
+					<a href="Atividade03.html" class="btn btn-default" role="button">
+						<span class="glyphicon glyphicon-plus"></span>
+						Cadastrar
+					</a>
+				</div>
 			</form>
+			</div>
+			<div class="container" id="footer">
+				&copy; 2018 - 
+				<a href="Atividade01.html" target="_blank">
+					Sistemas Web 1 - Daniella Silva Paiva
+				</a>
+			</div>
 	</body>
 </html>
