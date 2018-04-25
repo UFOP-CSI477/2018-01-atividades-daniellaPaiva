@@ -1,0 +1,110 @@
+<!-- 02 - Formulário de cadastro -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Formulário de Cadastro</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+		<script src="./jquery/jquery-3.3.1.js"></script>
+    	<script src="form.js"></script>
+	</head>
+	<body>
+		<div class="container" id="header">
+			<h1 class="page-header">Formulário de Cadastro</h1>
+		</div>
+		<div class="container" id="context">
+			<form>
+				<div class="row">
+					<div class="col-md-6"> 
+						<div class="form-group" id="campo_nome">
+							<label for="nome">Nome</label>
+					    	<input type="text" class="form-control" id="nome" value="" autofocus>
+
+					    	<div class="alert alert-danger" style="display: none" id="alerta_nome">
+					          <p>Informe o nome completo para cadastro.</p>
+					        </div>
+					    </div>
+					</div>
+       				<div class="col-md-2">
+	       				<div class="form-group" id="campo_data">
+						    <label for="data">Data de nascimento</label>
+						    <input type="date" class="form-control" id="data" value="">
+							
+							<div class="alert alert-danger" style="display: none" id="alerta_data">
+					          <p>Informe a data de nascimento para cadastro.</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6"> 
+						<div class="form-group" id="campo_email">
+							<label for="email">Email</label>
+					    	<input type="text" class="form-control" id="email" placeholder="Email">
+
+					    	<div class="alert alert-danger" style="display: none" id="alerta_email">
+					          <p>Informe o email para cadastro.</p>
+					        </div>
+					    </div>
+					</div>
+       				<div class="col-md-2">
+	       				<div class="form-group" id="campo_telefone">
+						    <label for="tel">Telefone</label>
+						    <input type="number" class="form-control" id="tel" placeholder="( )">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group" id="campo_genero">
+					<label for="genero">Gênero</label> <br>
+					<label class="radio-inline"><input type="radio" name="genero" value="F">Feminino</label>
+					<label class="radio-inline"><input type="radio" name="genero" value="M">Masculino</label>
+					<label class="radio-inline"><input type="radio" name="genero" value="NB">Não binário</label>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group" id="campo_curso"> 
+							<label for="curso">Curso</label>
+							<select class="form-control" id="curso">
+								<option value="0">Selecione: </option>
+								<option value="1">Engenharia de Computação</option>
+								<option value="2">Engenharia Elétrica</option>
+								<option value="3">Engenharia de Produção</option>
+								<option value="4">Sistemas de Informação</option>
+							</select>
+
+							<div class="alert alert-danger" style="display: none" id="alerta_curso">
+					          <p>Informe o curso para cadastro.</p>
+					        </div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group" id="campo_mat"> 
+							<label for="mat">Matrícula</label>
+					    	<input type="number" class="form-control" id="mat" value="">
+					    	<div class="alert alert-danger" style="display: none" id="alerta_mat">
+					          <p>Informe a matrícula para cadastro.</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				<div>				
+					<a id="botao" href="Atividade03.html" class="btn btn-default" role="button">
+						<span class="glyphicon glyphicon-plus"></span>
+						Cadastrar
+					</a>
+				</div>
+			</form>
+			</div>
+			<div class="container" id="footer">
+				&copy; 2018 - 
+				<a href="Atividade01.html" target="_blank">
+					Sistemas Web 1 - Daniella Silva Paiva
+				</a>
+			</div>
+	</body>
+</html>
