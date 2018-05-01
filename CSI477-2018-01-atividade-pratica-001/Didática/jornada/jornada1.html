@@ -8,12 +8,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Jornada pelo espaço</title>
+  
+  <script src="./jquery/jquery-3.3.1.js"></script>
+  <script src="jornada1.js"></script>
+
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/estilo.css" rel="stylesheet">  
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -61,17 +67,42 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="blank.html">Jornada 1</a>
+          <h4>Jornada 1 - Qual das imagens abaixo não é um planeta?</h4>
         </li>
       </ol>
-      <div class="row">
-        <div class="col-12">
-          <h1>Blank</h1>
-          <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
+      <div class="row" >
+        <div class="col-10">
+          <div class="form-group" id="jornada1">
+            <label class="radio-inline" >
+              <img src="./imagens/mercurio.jpg"> <br>
+              <input type="radio" name="planetas" value="mercurio">
+            </label>
+            <label class="radio-inline" >
+              <img src="./imagens/sol.jpg"> <br>
+              <input type="radio" name="planetas" value="sol">
+            </label>
+            <label class="radio-inline" >
+              <img src="./imagens/saturno.jpg"> <br>
+              <input type="radio" name="planetas" value="saturno">
+            </label>
+            <br>
+            <label class="radio-inline" >
+              <img src="./imagens/urano.jpg"> <br>
+              <input type="radio" name="planetas" value="urano">
+            </label>
+            <label class="radio-inline" >
+              <img src="./imagens/terra.jpg"> <br>
+              <input type="radio" name="planetas" value="terra">
+            </label>
+          </div>
+          <div class="col-2">
+            <button class="btn btn-default">
+              Conferir
+            </button>
+          </div >
         </div>
       </div>
     </div>
-    <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">
@@ -80,28 +111,7 @@
         </div>
       </div>
     </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
