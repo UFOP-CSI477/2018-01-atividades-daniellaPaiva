@@ -1,0 +1,37 @@
+.btn-custom {
+	padding: 1px 15px 3px 2px;
+	border-radius: 50px;
+}
+
+.btn-icon {
+	padding: 8px;
+	background: #ffffff;
+}
+
+#jornada1 {
+	text-align: center;
+	margin-left: 200px;
+}
+
+#jornada1 .radio-inline{
+	margin-right: 50px;
+}
+
+#btn-j1{ 
+	margin-bottom: 30%;
+}
+
+#btn-pj{ 
+	margin-bottom: 30%;
+	display: none;
+}
+
+.objeto{
+	margin-left: 100px;
+}
+
+#btns-j2{
+	margin-top: 25px;
+}
+
+

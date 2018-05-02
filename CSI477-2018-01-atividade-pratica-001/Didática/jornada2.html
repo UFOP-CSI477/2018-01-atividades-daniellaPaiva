@@ -8,18 +8,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Jornada pelo espaço</title>
-  
+
   <script src="./jquery/jquery-3.3.1.js"></script>
   <script src="jornada1.js"></script>
 
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="tema/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="tema/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="tema/css/sb-admin.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css/estilo.css" rel="stylesheet">  
+  <link href="estilo.css" rel="stylesheet">  
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -33,19 +33,16 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jornada 1">
           <a class="nav-link" href="jornada1.html">
-            <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Jornada 1</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jornada 2">
           <a class="nav-link" href="jornada2.html">
-            <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Jornada 2</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jornada 3">
           <a class="nav-link" href="jornada3.html">
-            <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Jornada 3</span>
           </a>
         </li>
@@ -67,42 +64,64 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <h4>Jornada 1 - Qual das imagens abaixo não é um planeta?</h4>
+          <h4>Jornada 2 - Qual o nome de cada objeto abaixo?</h4>
         </li>
       </ol>
-      <div class="row" >
-        <div class="col-10">
-          <div class="form-group" id="jornada1">
-            <label class="radio-inline" >
-              <img src="./imagens/mercurio.jpg"> <br>
-              <input type="radio" name="planetas" value="mercurio">
-            </label>
-            <label class="radio-inline" >
-              <img src="./imagens/sol.jpg"> <br>
-              <input type="radio" name="planetas" value="sol">
-            </label>
-            <label class="radio-inline" >
-              <img src="./imagens/saturno.jpg"> <br>
-              <input type="radio" name="planetas" value="saturno">
-            </label>
-            <br>
-            <label class="radio-inline" >
-              <img src="./imagens/urano.jpg"> <br>
-              <input type="radio" name="planetas" value="urano">
-            </label>
-            <label class="radio-inline" >
-              <img src="./imagens/terra.jpg"> <br>
-              <input type="radio" name="planetas" value="terra">
-            </label>
-          </div>
-          <div class="col-2">
-            <button class="btn btn-default">
-              Conferir
-            </button>
-          </div >
+      <div id="imagens" class="row" align="center">
+        <div class="col-4">
+          <img id="foguete" src="./imagens/meteoro.jpg">
+        </div>
+        <div class="col-4">
+          <img id="meteoro" src="./imagens/foguet.jpg">
+        </div>
+        <div class="col-4">
+          <img id="ovni" src="./imagens/ovni.jpg">
         </div>
       </div>
+      <div class="row">
+          <div class="col-4">
+            <select class="form-control" id="met">
+              <option value="0">Selecione:</option>
+              <option value="1">Foguete</option>
+              <option value="2">Ovni</option>
+              <option value="3">Meteoro</option>
+            </select>
+          </div>
+        <div class="col-4">
+          <select disabled class="form-control" id="foguet">
+            <option value="0">Selecione:</option>
+            <option value="1">Foguete</option>
+            <option value="2">Ovni</option>
+            <option value="3">Meteoro</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select disabled class="form-control" id="ovn">
+            <option value="0">Selecione:</option>
+            <option value="1">Foguete</option>
+            <option value="2">Ovni</option>
+            <option value="3">Meteoro</option>
+          </select>
+        </div> 
+      </div>
+      <div class="row" id="btns-j2">
+        <div class="col-4" align="right">
+          <button type="button" class="btn btn-primary btn-success" id="btn-j2-c">
+              Continuar
+          </button>
+        </div>
+        <div class="col-2" align="center">
+          <button disabled type="button" class="btn btn-primary btn-success" id="btn-j2">
+              Conferir
+          </button>
+        </div>
+        <div class="col-4">
+          <button disabled type="button" class="btn btn-primary btn-success" id="btn-pj2">
+            Próxima Jornada!
+          </button>
+        </div>
     </div>
+    <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">
@@ -111,14 +130,18 @@
         </div>
       </div>
     </footer>
-   
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="tema/vendor/jquery/jquery.min.js"></script>
+    <script src="tema/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="tema/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="tema/js/sb-admin.min.js"></script>
   </div>
 </body>
 
