@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>ATV1 - Cálculo: Escala Ritcher e IMC</title>
+
+    <!-- jQuery -->
+    <script src="jquery/jquery.js"></script>
+    <script src="imc.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <link href="estilo.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Cálculos Online</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="escala.html">Escala Ritcher</a></li>
+            <li class="active"><a href="imc.html">IMC</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>IMC - Indice de massa corporal</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="lead">Entre com os parâmetros necessários para o cálculo.</p>
+        </div>
+      </div>
+
+    <!-- Fórmula da escala ritcher  -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead">Fórmula.</p>
+        </div>
+      </div>
+
+      <!-- Parametros de entrada -->
+      <div class="row" id="parametros2">
+        <!-- Parametro peso (w) -->
+        <div class="col-md-1">
+          <p class="lead" for="peso">Peso:</p>
+        </div>
+        <div class="col-md-2">
+          <input type="number" class="form-control" id="peso" value="1" autofocus>  
+        </div>
+
+        <!-- Parametro altura -->
+        <div class="col-md-1">
+          <p class="lead" for="altura">Altura:</p>
+        </div>
+        <div class="col-md-2">
+          <input type="number" class="form-control" id="altura" value="1" autofocus>  
+        </div>
+      </div>
+
+      <div class="row" id="resultado2">
+        <!-- Resultado: magnitude -->
+        <div class="col-md-1" align="center">
+          <p class="lead" for:"res">IMC:</p>
+        </div>
+        <div class="col-md-2">
+          <input type="text" name="res" disabled class="form-control">
+        </div>
+
+        <!-- Botão calcular -->
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary btn-success" id="btn-j2">
+            CALCULAR
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">Copyright © Cálculos Online Website 2018</p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
