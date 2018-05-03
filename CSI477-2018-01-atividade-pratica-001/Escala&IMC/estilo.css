@@ -1,5 +1,5 @@
 body {
-	background-image: url(Imagens/background.jpg);
+	background: url(Imagens/background.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-size: 100% 100%;
@@ -10,6 +10,10 @@ body {
 }
 
 input {
+	text-align: center;
+}
+
+#menu{
 	text-align: center;
 }
 
@@ -40,4 +44,16 @@ input {
 #resultado2 {
 	margin-top: 40px;
 	margin-left: 70px;
+}
+
+#img-escala {
+	display: inline;
+}
+
+#ideal{
+	margin-left: 20px;
+}
+
+#efeito{
+	height: 50px;
 }

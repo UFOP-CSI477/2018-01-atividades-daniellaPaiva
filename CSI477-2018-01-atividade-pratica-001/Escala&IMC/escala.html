@@ -31,12 +31,6 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="home.html">Cálculos Online</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -54,15 +48,19 @@
           <h1>Escala Ritcher</h1>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <p class="lead">Entre com os parâmetros necessários para o cálculo.</p>
+        <div class="col-md-5">
+          <p class="lead">Entre com os parâmetros necessários.</p>
         </div>
       </div>
 
       <!-- Fórmula da escala ritcher  -->
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-5">
           <p class="lead">Fórmula.</p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6" align="center">
+          <p class="lead">Efeitos</p>
         </div>
       </div>
 
@@ -82,6 +80,10 @@
         </div>
         <div class="col-md-1">
           <input type="number" class="form-control" id="deltaT" value="1" autofocus>  
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <textarea wrap="hard" cols="30" rows="5" class="form-control" id="efeito" disabled></textarea> 
         </div>
       </div>
 
