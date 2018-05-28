@@ -3,7 +3,6 @@
 // Includes - framework
 include './model/Database.php';
 include './model/User.php';
-include './model/Patient.php';
 include './model/Procedure.php';
 include './controller/UsersController.php';
 include './controller/PatientsController.php';

@@ -3,7 +3,7 @@
 // Includes - framework
 include './model/Database.php';
 include './model/Procedure.php';
-include './model/Patient.php';
+include './model/Test.php';
 include './controller/PatientsController.php';
 
 // Tratamento das rotas

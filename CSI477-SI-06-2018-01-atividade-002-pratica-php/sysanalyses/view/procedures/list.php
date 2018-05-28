@@ -1,6 +1,6 @@
 <div class="col-md-2"></div>
 	<div class="col-md-8" align="center" >
-		<h1>Lista de Procedimentos</h1>
+		<h1>Lista de Procedimentos</h1><br>
 		<table class="table table-bordered table-striped" >
 			<thead class="thead-light">
 				<th scope="col">#</th>

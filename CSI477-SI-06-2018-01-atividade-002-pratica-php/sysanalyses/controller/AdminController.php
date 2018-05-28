@@ -4,6 +4,7 @@ namespace Controller;
 
 use Model\Admin;
 use Model\User;
+use Model\Test;
 use Model\Procedure;
 
 
@@ -11,6 +12,12 @@ class AdminController {
 
 	public function home(){
 		session_start();
+		 //Acesso ao modelo
+		$proc = new Procedure();
+
+    //Tabela de procedimentos
+		$lista = $proc->all();
+
 
   	// Invocar a View
 		include './view/admin/home.php';
@@ -55,18 +62,6 @@ class AdminController {
 		header("Location: ./router_admin.php?op=2");
 	}
 
-	public function procedures(){
-		session_start();
-    //Acesso ao modelo
-		$proc = new Procedure();
-
-    //Tabela de procedimentos
-		$lista = $proc->all();
-
-  	// Invocar a View
-		include './view/admin/list_procedures.php';
-	}
-
 	public function select_procedure($id){
 		//Acesso ao modelo
 		$proc = new Procedure();
@@ -74,22 +69,41 @@ class AdminController {
 		$lista = $proc->all();
 		$result = $proc->select($id);
 
-		include './view/operador/edit_procedure.php';
+		include './view/admin/edit_procedure.php';
 	}
 
 	public function update_procedure($request){
-		var_dump($request);
+		//Acesso ao Model
+		$proc = new Procedure();
+		$result = $proc->update($request);
+
+		if($result){
+			header("Location: ./router_admin.php?op=1");
+		}else{
+			echo "ERRO";
+		}
 	}
 
 	public function delete_procedure($id){
 		$proc = new Procedure();
 		$result = $proc->delete($id);
 
-		//header("Location: ./router_admin.php?op=1");
+		if($result){
+			header("Location: ./router_admin.php?op=1");
+		}else{
+			echo "ERRO";
+		}
 	}
 
 	public function tests(){
-		echo "CRUD TESTES";
+		session_start();
+    //Acesso ao modelo
+		$test = new Test();
+		$lista = $test->all();
+
+  	// Invocar a View
+		include './view/admin/list_tests.php';
+		
 	}
 
 	public function relatorios(){

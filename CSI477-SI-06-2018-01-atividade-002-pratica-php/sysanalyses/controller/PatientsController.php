@@ -2,6 +2,7 @@
 
 namespace Controller;
 use Model\Patient;
+use Model\Test;
 use Model\Procedure;
 
 class PatientsController {
@@ -9,10 +10,10 @@ class PatientsController {
 	public function home() {
 		session_start();
     // Acesso ao Modelo
-		$patient = new Patient();
+		$tests = new Test();
 
     // Manipular dados
-		$lista = $patient->all_tests();
+		$lista = $tests->user_tests();
 		$tamanho = sizeof($lista);
 		$valor = PatientsController::valor_exames($lista);
 		
@@ -36,7 +37,7 @@ class PatientsController {
 		$proc = new Procedure();
 		$lista = $proc->all();
 
-		include './view/patient/test.php';
+		include './view/patient/create_test.php';
 	}
 
 	public function salvar_exame($request){
@@ -45,8 +46,8 @@ class PatientsController {
 		$date = $request['date'];
 
 		//Acesso ao Model
-		$exame = new Patient();
-		$result = $exame->salvar($procedure, $date);
+		$exame = new Test();
+		$result = $exame->create($procedure, $date);
 
 		if($result){
 			header("Location: ./router_patient.php?op=1");
@@ -61,8 +62,8 @@ class PatientsController {
 		$proc = new Procedure();
 		$lista = $proc->all();
 
-		$exame = new Patient();
-		$result = $exame->editar($id);
+		$exame = new Test();
+		$result = $exame->select($id);
 
 		//Invocar a view
 		include './view/patient/edit_test.php';
@@ -70,8 +71,8 @@ class PatientsController {
 
 	public function atualizar_exame($request){
 		//Acesso ao Model
-		$exame = new Patient();
-		$result = $exame->atualizar($request);
+		$exame = new Test();
+		$result = $exame->update($request);
 
 		if($result){
 			header("Location: ./router_patient.php?op=1");
@@ -81,8 +82,8 @@ class PatientsController {
 	}
 
 	public function excluir_exame($id){
-		$exame = new Patient();
-		$result = $exame->excluir($id);
+		$exame = new Test();
+		$result = $exame->delete($id);
 
 		header("Location: ./router_patient.php?op=1");
 	}
@@ -95,10 +96,5 @@ class PatientsController {
 
 		include './view/patient/procedures.php';
 	}
-
-
-
-
-
 
 }

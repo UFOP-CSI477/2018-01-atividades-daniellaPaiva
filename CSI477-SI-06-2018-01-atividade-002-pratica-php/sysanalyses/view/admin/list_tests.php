@@ -22,7 +22,7 @@
 
 	<?php 
 		require_once("./view/admin/header.php"); 
-		require_once("./view/procedures/list_admin.php");
+		require_once("./view/tests/list.php");
 		require_once("./view/geral/footer.php");
 	?>    
 

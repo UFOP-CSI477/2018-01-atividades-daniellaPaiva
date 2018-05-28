@@ -2,7 +2,6 @@
 
 // Includes - framework
 include './model/Database.php';
-include './model/Operador.php';
 include './model/Test.php';
 include './model/Procedure.php';
 include './controller/OpersController.php';
@@ -32,12 +31,12 @@ elseif ( $op == 2 ) {
 	$operController->procedures();
 } 
 
-//Procedimentos - Editar procedimento
+//Procedimentos - Seleciona procedimento
 elseif ( $op == 3 ) {  
 	$id = $_GET['id'];
 
 	$operController = new OpersController;
-	$operController->edit_procedure($id);
+	$operController->select_procedure($id);
 } 
 
 //Procedimentos - Atualizar procedimento

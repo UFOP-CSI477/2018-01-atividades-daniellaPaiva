@@ -9,10 +9,10 @@
            <a href="?op=0">Sair</a>
           </li>
           <li>
-            <a href="?op=6">Procedimentos</a>
+            <a href="?op=1">Procedimentos</a>
           </li>
           <li>
-            <a href="?op=1">Exame</a>
+            <a href="?op=9">Exames</a>
           </li>
           <li>
             <a href="?op=2">Usuários</a>

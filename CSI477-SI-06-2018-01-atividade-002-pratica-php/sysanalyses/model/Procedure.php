@@ -40,14 +40,16 @@ class Procedure {
     $user_id = $_SESSION['user'];
 
     $procedure_id = $request['procedure_id'];
+    $name = $request['name'];
     $price = $request['price'];
 
     try {
-      $sql = "UPDATE procedures SET price=:price
+      $sql = "UPDATE procedures SET name=:name, price=:price
       WHERE id=:procedure_id";
 
       $result = $this->db->prepare($sql);
       $result->bindParam(':procedure_id', $procedure_id, PDO::PARAM_INT);
+      $result->bindParam(':name', $name, PDO::PARAM_STR);
       $result->bindParam(':price', $price, PDO::PARAM_STR);
       return $result->execute();
     } catch (PDOException $e) {

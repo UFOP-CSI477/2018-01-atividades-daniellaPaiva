@@ -14,14 +14,56 @@ class Test {
   }
 
   public function all() {
-    $sql = "SELECT * FROM tests ORDER BY id";
+    $sql = "SELECT  tests.user_id, tests.procedure_id, tests.date_test, procedures.name, procedures.price, users.email FROM tests 
+            INNER JOIN procedures ON tests.procedure_id = procedures.id  
+            INNER JOIN users ON tests.user_id = users.id  
+            ORDER BY tests.date_test";
     return $this->db->query($sql);
+  }
+
+
+  //Retorna todos os exames do paciente
+  public function user_tests() {
+    $user_id = $_SESSION['user'];
+
+    try{
+      $sql = "SELECT  tests.id, tests.date_test, procedures.name, procedures.price FROM tests
+          INNER JOIN procedures ON tests.procedure_id = procedures.id  
+          WHERE tests.user_id=:user_id ORDER BY tests.date_test DESC, procedures.name ASC";
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+      $result->execute();
+
+      return $result->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch(PDOException $e){
+      echo "ERROR" . $e->getMessage();
+    }
   }
 
   function formatarData($date){
       $rData = date('Y-m-d',strtotime($date));
       return $rData;
    }
+
+   //Novo exame
+  public function create($procedure_id, $date){
+    session_start();
+    $date_test = Test::formatarData($date);
+    $user_id = $_SESSION['user'];
+    try {
+      $sql = "INSERT INTO tests (user_id, procedure_id, date_test)
+      VALUES (:user_id, :procedure_id, :date_test)";
+
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+      $result->bindParam(':procedure_id', $procedure_id, PDO::PARAM_INT);
+      $result->bindParam(':date_test', $date_test, PDO::PARAM_STR);
+      return $result->execute();
+    } catch (PDOException $e) {
+      echo "ERROR" . $e->getMessage();
+    }
+  }
 
   public function select($id){
   	session_start();

@@ -25,7 +25,7 @@ if(!isset($_SESSION['user']) || ($_SESSION['type'] != $nivel))
 	<div class="col-md-4"></div>
 	<div class="col-md-4" align="center">
 		<h1>Editar procedimento</h1>
-		<form class="form-group row" action="router_admin.php?op=8" method="post">
+		<form class="form-group row" action="router_admin.php?op=7" method="post">
 			<input class="form-control" type="text" name="procedure_id" value="<?php echo "".$result['id'] ?>" readonly>
 			<br>
 			<input class="form-control" type="text" name="name" id="name" value="<?php echo "".$result['name'] ?>"/>

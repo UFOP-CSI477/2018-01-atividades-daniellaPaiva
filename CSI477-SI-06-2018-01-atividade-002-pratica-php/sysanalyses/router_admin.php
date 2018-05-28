@@ -3,8 +3,8 @@
 // Includes - framework
 include './model/Database.php';
 include './model/Procedure.php';
-include './model/Admin.php';
 include './model/User.php';
+include './model/Test.php';
 include './controller/AdminController.php';
 include './controller/UsersController.php';
 
@@ -59,14 +59,8 @@ elseif ( $op == 5 ) {
 	$adminController->delete_user($id);
 } 
 
-//Procedures
-elseif ( $op == 6 ) {  
-	$adminController = new AdminController;
-	$adminController->procedures();
-} 
-
 //Editar Procedures
-elseif ( $op == 7 ) {
+elseif ( $op == 6 ) {
 	$id = $_GET['id'];  
 
 	$adminController = new AdminController;
@@ -74,20 +68,20 @@ elseif ( $op == 7 ) {
 } 
 
 //Atualizar Procedures
-elseif ( $op == 8 ) {  
+elseif ( $op == 7 ) {  
 	$adminController = new AdminController;
 	$adminController->update_procedure($_POST);
 } 
 
 //Deletar Procedures
-elseif ( $op == 9 ) {  
+elseif ( $op == 8 ) {  
 	$id = $_GET['id'];
 
 	$adminController = new AdminController;
 	$adminController->delete_procedure($id);
 } 
 
-/*Tests
+//Tests
 elseif ( $op == 9 ) {  
 	$adminController = new AdminController;
 	$adminController->tests();

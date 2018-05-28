@@ -21,8 +21,10 @@ if(!isset($_SESSION['user']) || ($_SESSION['type'] != $nivel))
 <body>
 
 	<?php require_once("./view/patient/header.php"); ?>
-	<?php require_once("./view/tests/edit.php");?> 
-	<?php require_once("./view/geral/footer.php");?>    
+	<?php require_once("./view/tests/create.php"); ?>
+	
+</div>
+<?php	require_once("./view/geral/footer.php");?>    
 
 </body>
 </html>
