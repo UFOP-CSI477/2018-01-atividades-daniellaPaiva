@@ -46,20 +46,24 @@ class Test {
       return $rData;
    }
 
+
    //Novo exame
-  public function create($procedure_id, $date){
+  public function create($proc_list, $date){
     session_start();
     $date_test = Test::formatarData($date);
     $user_id = $_SESSION['user'];
     try {
-      $sql = "INSERT INTO tests (user_id, procedure_id, date_test)
-      VALUES (:user_id, :procedure_id, :date_test)";
+      foreach($proc_list as $proc){
+        $sql = "INSERT INTO tests (user_id, procedure_id, date_test)
+        VALUES (:user_id, :proc, :date_test)";
 
-      $result = $this->db->prepare($sql);
-      $result->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-      $result->bindParam(':procedure_id', $procedure_id, PDO::PARAM_INT);
-      $result->bindParam(':date_test', $date_test, PDO::PARAM_STR);
-      return $result->execute();
+        $result = $this->db->prepare($sql);
+        $result->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $result->bindParam(':proc', $proc, PDO::PARAM_INT);
+        $result->bindParam(':date_test', $date_test, PDO::PARAM_STR);
+        $result->execute();
+      }
+      return true;
     } catch (PDOException $e) {
       echo "ERROR" . $e->getMessage();
     }
@@ -115,6 +119,46 @@ class Test {
       $result = $this->db->prepare($sql);
       $result->bindParam(':id', $id, PDO::PARAM_INT);
       return $result->execute();
+    } catch (PDOException $e) {
+      echo "ERROR" . $e->getMessage();
+    }
+  }
+
+  //Excluir procedimento - Verifica se tem testes com o procedure_id a ser excluído
+  public function verifica_delete_procedure($id){
+    session_start();
+    $user_id = $_SESSION['user'];
+    try {
+      $sql = "SELECT tests.id, tests.procedure_id, procedures.id FROM tests 
+              INNER JOIN procedures ON tests.procedure_id = procedures.id 
+              WHERE procedure_id=:id";
+
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':id', $id, PDO::PARAM_INT);
+      $result->execute();
+
+      return $result->fetch(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+      echo "ERROR" . $e->getMessage();
+    }
+  }
+
+   //Excluir usuário - Verifica se tem testes com o user_id a ser excluído
+  public function verifica_delete_user($id){
+    session_start();
+    $user_id = $_SESSION['user'];
+    try {
+      $sql = "SELECT tests.id, tests.user_id, users.id FROM tests 
+              INNER JOIN users ON tests.user_id = users.id 
+              WHERE user_id=:id";
+
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':id', $id, PDO::PARAM_INT);
+      $result->execute();
+
+      return $result->fetch(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
       echo "ERROR" . $e->getMessage();
     }

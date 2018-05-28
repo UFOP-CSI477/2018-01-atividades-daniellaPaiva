@@ -42,19 +42,20 @@ class PatientsController {
 
 	public function salvar_exame($request){
 		// Recuperando dados do form
-		$procedure = $request['procedure_id'];
+		$proc_list = $request['check_proc'];
 		$date = $request['date'];
 
 		//Acesso ao Model
 		$exame = new Test();
-		$result = $exame->create($procedure, $date);
+		$result = $exame->create($proc_list, $date);
 
 		if($result){
-			header("Location: ./router_patient.php?op=1");
+			echo "<script>alert('Exame marcado com sucesso!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
 		}else{
-			echo "Não inserido";
-		}
-		
+			echo "<script>alert('Ocorreu um erro!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
+		}		
 	}
 
 	public function editar_exame($id){
@@ -75,9 +76,11 @@ class PatientsController {
 		$result = $exame->update($request);
 
 		if($result){
-			header("Location: ./router_patient.php?op=1");
+			echo "<script>alert('Exame atualizado com sucesso!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
 		}else{
-			echo "ERRO";
+			echo "<script>alert('Ocorreu um erro!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
 		}
 	}
 
@@ -85,7 +88,13 @@ class PatientsController {
 		$exame = new Test();
 		$result = $exame->delete($id);
 
-		header("Location: ./router_patient.php?op=1");
+		if($result){
+			echo "<script>alert('Exame excluido com sucesso!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
+		}else{
+			echo "<script>alert('Ocorreu um erro!');</script>";
+			header("refresh:0; url=./router_patient.php?op=1");
+		}
 	}
 
 	public function procedures(){

@@ -18,6 +18,24 @@ class User {
     return $this->db->query($sql);
   }
 
+   public function create($name, $email, $password, $type){
+    session_start();
+    $user_id = $_SESSION['user'];
+    try {
+      $sql = "INSERT INTO users (name, email, password, type)
+      VALUES (:name, :email, :password, :type)";
+
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':name', $name, PDO::PARAM_STR);
+      $result->bindParam(':email', $email, PDO::PARAM_STR);
+      $result->bindParam(':password', $password, PDO::PARAM_STR);
+      $result->bindParam(':type', $type, PDO::PARAM_INT);
+      return $result->execute();
+    } catch (PDOException $e) {
+      echo "ERROR" . $e->getMessage();
+    }
+  }
+
   //Editar user
   public function editar($id){
     session_start();
@@ -133,20 +151,7 @@ public function cadastroPaciente($name,$email,$password){
   }
 }
 
-public function excluir($id){
-    session_start();
-    $user_id = $_SESSION['user'];
-    try {
-      $sql = "DELETE FROM users WHERE id=:id";
 
-      $result = $this->db->prepare($sql);
-      $result->bindParam(':id', $id, PDO::PARAM_INT);
-      return $result->execute();
-    } catch (PDOException $e) {
-      echo "ERROR" . $e->getMessage();
-    }
-
-}
 
 public function atualizar($request){
   var_dump($resquest);

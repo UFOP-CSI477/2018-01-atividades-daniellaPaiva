@@ -55,7 +55,13 @@ if(!isset($_SESSION['user']) || ($_SESSION['type'] != $nivel))
     </table>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12" align="center">
+    <a class="btn btn-success" href="/sysanalyses/router_admin.php?op=12">Adicionar</a>
+  </div>
 </div>
+</div>
+
 <?php require_once("./view/geral/footer.php");?>    
 
 </body>

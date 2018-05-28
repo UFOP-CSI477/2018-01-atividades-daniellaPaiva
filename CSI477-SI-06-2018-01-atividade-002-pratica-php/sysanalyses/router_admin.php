@@ -34,6 +34,18 @@ elseif ( $op == 2 ) {
 	$adminController->users();
 } 
 
+//Criar User
+elseif ( $op == 12 ) {
+	$adminController = new AdminController;
+	$adminController->create_user();
+}
+
+//Salvar User
+elseif ( $op == 13 ) {
+	$adminController = new AdminController;
+	$adminController->save_user($_POST);
+}
+
 //Editar User
 elseif ( $op == 3 ) {  
 	$id = $_GET['id'];
@@ -58,6 +70,18 @@ elseif ( $op == 5 ) {
 	$adminController = new AdminController;
 	$adminController->delete_user($id);
 } 
+
+//Criar Procedures
+elseif ( $op == 10 ) {
+	$adminController = new AdminController;
+	$adminController->create_procedure();
+}
+
+//Salvar Procedures
+elseif ( $op == 11 ) {
+	$adminController = new AdminController;
+	$adminController->save_procedure($_POST);
+}
 
 //Editar Procedures
 elseif ( $op == 6 ) {
@@ -86,9 +110,3 @@ elseif ( $op == 9 ) {
 	$adminController = new AdminController;
 	$adminController->tests();
 }
-
-/*Relatórios
-elseif ( $op == 5 ) {  
-	$adminController = new AdminController;
-	$adminController->relatorios();
-} */

@@ -47,7 +47,7 @@ elseif ( $op == 4 ) {
 //Atualizar exame
 elseif ( $op == 5 ) {
 	$testController = new PatientsController;
-	$testController->atualizar_exame($_POST);
+	$result = $testController->atualizar_exame($_POST);
 } 
 
 //Excluir exame
