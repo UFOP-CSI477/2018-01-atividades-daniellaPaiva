@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+     <?php require_once("./view/site/head.php"); ?>
+
+  </head>
+  <body>
+
+    <?php require_once("./view/site/header.php"); ?>
+
+  		<form action="router.php?op=3" method="post" class="form_login">
+
+        <div class="imgcontainer">
+          <img src="/atv2/mvc/public/imagens/avatar_login.png" alt="Avatar" class="avatar">
+       </div>
+			
+        <input type="text" name="email" id="email" placeholder="Email" /><br>
+  			<input type="password" name="password" placeholder="Senha" /><br>
+  			<input type="submit" class="entrar" value="Entrar" />
+
+        <br><br>
+        <a class="cadastro" href="router.php?op=4">Cadastrar</a>
+  	</form>
+
+    <?php require_once("./view/site/footer.php"); ?>
+  </body>
+</html>

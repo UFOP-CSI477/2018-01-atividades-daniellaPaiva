@@ -1,0 +1,58 @@
+*
+{
+	padding:0px;
+	margin: 0px;
+	vertical-align: baseline;
+	list-style: none;
+	border: 0px;
+}
+
+.container
+{
+	width: 600px;
+	height: 600px;
+	text-align: center;
+	margin-left: 400px;
+	border-radius: 20px;
+	background-color:#F0E0E0;	
+}
+
+.img
+{
+	padding-top: 20px;
+	width: 100%;
+}
+
+.text h1
+{
+	font-family: 'Ranga', cursive;
+	padding-top: 5px;
+}
+
+.text p
+{
+	text-align: center;
+	font-family: 'Alegreya', serif;
+
+}
+
+.footer a
+{
+	text-decoration: none;
+	float: left;
+	padding-left: 10px;
+	font-size: 20px;
+	font-family: 'Alegreya', serif;
+}
+
+.footer a:hover
+{
+	text-decoration: underline;
+	color:red;
+}
+
+.footer data
+{
+	float: right;
+	padding-right:20px;
+}
