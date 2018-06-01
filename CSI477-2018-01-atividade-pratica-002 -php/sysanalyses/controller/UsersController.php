@@ -103,22 +103,22 @@ class UsersController {
     $user = new User();
 
     //Verifica se usuario já existe no bd
-    $validacao = $user->validaDados($email,$password);
+    $validacao = $user->verifica($email);
     if($validacao){
       echo "<script>alert('Usuário já existe. Pode logar :)');</script>";
-include './view/geral/login.php';
-} else{
+      include './view/geral/login.php';
+      } else{
 
- $cadastro = $user->cadastroPaciente($name,$email,$password);
+       $cadastro = $user->cadastroPaciente($name,$email,$password);
 
- if($cadastro){
-   $validacao = $user->validaDados($email,$password);
-   UsersController::nivel_acesso();
- } else{
-   echo "<script>alert('Falha ao cadastrar. Tente novamente!');</script>";
-   include './view/geral/cadastro.php';
- }
-} 
-}
+       if($cadastro){
+         $validacao = $user->validaDados($email,$password);
+         UsersController::nivel_acesso();
+       } else{
+         echo "<script>alert('Falha ao cadastrar. Tente novamente!');</script>";
+         include './view/geral/cadastro.php';
+       }
+     } 
+  }
 
 }

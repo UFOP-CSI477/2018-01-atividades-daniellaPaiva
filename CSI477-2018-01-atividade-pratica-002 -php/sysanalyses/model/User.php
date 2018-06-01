@@ -95,6 +95,35 @@ class User {
   }
 
   // Verifica se usuário existe no baco de dados
+  public function verifica($email){
+    $sql = "SELECT * FROM users WHERE email =:email";
+
+    try{
+
+      //Prepara a consulta e executa
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':email', $email, PDO::PARAM_STR);
+      $result->execute();
+
+       //Conta os registros de retorno
+      $contar = $result->rowCount();
+
+      //Usuário existe
+      if($contar>0){
+        return true;
+      } else{
+          session_destroy();
+          return false;        
+     }
+     } catch(PDOException $e)
+   { 
+    echo "ERROR" . $e->getMessage();
+  }
+}
+
+
+
+
   // Cria a sessão [user, type]
   public function validaDados($email, $password){ 
     $sql = "SELECT * FROM users WHERE email =:email AND password =:password";
