@@ -104,4 +104,22 @@ class Procedure {
     }
   }
 
+  public function relatorio_patients($user_id){
+    $sql = "SELECT procedures.name FROM tests 
+    INNER JOIN procedures ON procedures.id = tests.procedure_id 
+    WHERE tests.user_id = '$user_id'";
+
+    return $this->db->query($sql);
+  }
+
+  public function relatorio_procedures($proc_id){
+    $sql = "SELECT users.name FROM tests 
+    INNER JOIN procedures ON tests.procedure_id = procedures.id 
+    INNER JOIN users ON tests.user_id = users.id 
+    WHERE tests.procedure_id = $proc_id";
+    
+
+    return $this->db->query($sql);
+  }
+
 }

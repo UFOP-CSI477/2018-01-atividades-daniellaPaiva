@@ -203,10 +203,6 @@ class AdminController {
 		/*$lista[userId, user_name, email, valor, quantidade] */
 		$lista = $test->relatorio_patients();
 
-    
-		//foreach ($lista as $linha) {
-	//		var_dump($linha);
-	//	}
   		// Invocar a View
 		include './view/admin/tests_patients.php';
 		

@@ -186,7 +186,7 @@ class Test {
              quantidade
     */
   public function relatorio_procedures() {
-    $sql = "SELECT DISTINCT procedures.name, procedures.price,
+    $sql = "SELECT DISTINCT procedures.id as proc_id, procedures.name as proc_name, procedures.price,
             COUNT(procedures.id) as quantidade FROM tests 
             INNER JOIN procedures ON procedures.id = tests.procedure_id 
             GROUP BY procedures.name";
