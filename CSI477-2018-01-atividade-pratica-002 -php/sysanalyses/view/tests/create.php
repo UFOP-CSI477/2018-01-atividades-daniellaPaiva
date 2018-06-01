@@ -19,7 +19,7 @@
 				<tbody>
 					<?php foreach($lista as $linha ): ?>
 					<tr>
-						<td><input type="checkbox" name="check_proc[]" value="<?php echo "".$linha['id']?>"></td>
+						<td><input type="checkbox" name="check_proc" value="<?php echo "".$linha['id']?>"></td>
 						<td><?= $linha['name'] ?></td>
 						<td><?= $linha['price'] ?></td>
 					</tr>

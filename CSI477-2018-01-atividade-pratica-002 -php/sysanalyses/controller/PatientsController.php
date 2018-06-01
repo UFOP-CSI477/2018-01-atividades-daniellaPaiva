@@ -43,20 +43,26 @@ class PatientsController {
 
 	public function salvar_exame($request){
 		// Recuperando dados do form
-		$proc_list = $request['check_proc'];
-		$date = $request['date'];
+		
+		if(isset($request['check_proc'])){
+			$proc_list = $request['check_proc'];
+			$date = $request['date'];
 
-		//Acesso ao Model
-		$exame = new Test();
-		$result = $exame->create($proc_list, $date);
+			//Acesso ao Model
+			$exame = new Test();
+			$result = $exame->create($proc_list, $date);
 
-		if($result){
-			echo "<script>alert('Exame marcado com sucesso!');</script>";
-			header("refresh:0; url=./router_patient.php?op=1");
-		}else{
-			echo "<script>alert('Ocorreu um erro!');</script>";
-			header("refresh:0; url=./router_patient.php?op=1");
-		}		
+			if($result){
+				echo "<script>alert('Exame marcado com sucesso!');</script>";
+				header("refresh:0; url=./router_patient.php?op=1");
+			}else{
+				echo "<script>alert('Ocorreu um erro!');</script>";
+				header("refresh:0; url=./router_patient.php?op=1");
+			}	
+		} else{
+			echo "<script>alert('Selecione ao menos um preocedimento!');</script>";
+			header("refresh:0; url=./router_patient.php?op=2");
+		}	
 	}
 
 	public function editar_exame($id){
