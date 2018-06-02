@@ -16,11 +16,11 @@
     <?php require_once("./view/geral/header.php"); ?>
 
     <!-- Page Content -->
-    <?php require_once("./view/geral/content.php"); ?>
+    <?php require_once("./view/cidades/lista.php"); ?>
 
-    <!-- Footer -->
-    <?php require_once("./view/geral/footer.php"); ?>
-	
+    <!-- Footer 
+    <?php //require_once("./view/geral/footer.php"); ?>
+  -->
 
   </body>
 
