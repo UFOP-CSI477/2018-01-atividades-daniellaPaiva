@@ -16,7 +16,7 @@ class AlunosController {
 
 
     // Invocar a View
-    include './view/alunos/lista.php';
+    include './view/alunos/content.php';
 
 
 

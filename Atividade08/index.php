@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sistema de Controle Acadêmico</title>
+    <?php require_once("./view/geral/head.php"); ?>
   </head>
   <body>
 
@@ -14,10 +15,16 @@
       }
     ?>
 
-    <!-- Links //-->
-    <a href="router.php?op=1">Listar alunos</a>
-    <a href="router.php?op=2">Inserir cidade</a>
-    <a href="router.php?op=4">Listar cidade</a>
+     <!-- Navigation -->
+    <?php require_once("./view/geral/header.php"); ?>
+
+    <!-- Page Content -->
+    <?php require_once("./view/geral/content.php"); ?>
+
+    <!-- Footer -->
+    <?php require_once("./view/geral/footer.php"); ?>
+  
+
 
   </body>
 </html>

@@ -3,6 +3,7 @@
 	<div class="col-md-10" align="center" >
 		<table class="table table-bordered table-striped" >
 			<thead class="thead-light">
+				<tr>
 				<th scope="col">Data</th>
 				<th scope="col">Procedimentos</th>
 				<th scope="col">Valor</th>

@@ -15,7 +15,7 @@ class CidadesController {
     $lista = $cidade->all();
 
     // Invocar a View
-    include './view/cidades/lista.php';
+    include './view/cidades/content.php';
   }
 
   // Exibir o formulario para insercao da cidade

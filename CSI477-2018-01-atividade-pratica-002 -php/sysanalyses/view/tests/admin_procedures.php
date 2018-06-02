@@ -9,6 +9,7 @@
 		<div class="col-md-8" align="center" >
 			<table class="table table-bordered table-striped" >
 				<thead class="thead-light">
+					<tr>
 					<th scope="col">Nº Exames</th>
 					<th scope="col">Procedimentos</th>
 					<th scope="col">Valor</th>

@@ -16,16 +16,18 @@ $op = $_GET['op'];
 
 // Definição das rotas
 if ( $op == 1 ) {
+  header("Location: index.php");
+} else if ( $op == 2 ) {
   $alunoController = new AlunosController;
   $alunoController->listar();
-} else if ( $op == 2 ) {
+} else if ( $op == 3 ) {
   $cidadeController = new CidadesController;
   $cidadeController->create();
-} else if ( $op == 3 ) {
+} else if ( $op == 4 ) {
   //var_dump($_POST);
   $cidadeController = new CidadesController;
   $cidadeController->store($_POST);
-} else if ( $op == 4 ) {
+} else if ( $op == 5 ) {
   $cidadeController = new CidadesController;
   $cidadeController->listar();
 }

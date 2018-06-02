@@ -11,6 +11,7 @@
 				<h2>Lista de Procedimentos</h2><br>
 				<table class="table table-bordered table-striped" >
 					<thead class="thead-light">
+						<tr>
 						<th scope="col">#</th>
 						<th scope="col">Procedimentos</th>
 						<th scope="col">Valor</th>
