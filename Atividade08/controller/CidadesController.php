@@ -15,7 +15,7 @@ class CidadesController {
     $lista = $cidade->all();
 
     // Invocar a View
-    include './view/cidades/content.php';
+    include './view/cidades/content_list.php';
   }
 
   // Exibir o formulario para insercao da cidade
@@ -26,29 +26,33 @@ class CidadesController {
     $lista = $estados->all();
 
     // Exibir a view
-    include './view/cidades/create.php';
+    include './view/cidades/content_create.php';
   }
 
   public function store($request) {
+    session_start();
     $nome = $request['nome'];
     $estado_id = $request['estado_id'];
 
-    $cidade = new Cidade();
-    $cidade->setNome($nome);
-    $cidade->setEstadoId($estado_id);
-    $cidade->save();
+    $lista = new Cidade();
+    $verifica = $lista->select($nome);
 
-    session_start();
-    $_SESSION['mensagem'] = "Cidade inserida com sucesso!";
+    if(!$verifica){
+      $cidade = new Cidade();
+      $cidade->setNome($nome);
+      $cidade->setEstadoId($estado_id);
+      $cidade->save();
 
-    //$this->listar();
+      $_SESSION['mensagem'] = "Cidade inserida com sucesso!";
+    } else{
+      $_SESSION['mensagem'] = "Registro já existe!";
+    }
+
     $this->redir();
-
-
   }
 
   private function redir() {
-    header("Location: ./index.php");
+    header("Location: ./router.php?op=7");
     exit();
   }
 

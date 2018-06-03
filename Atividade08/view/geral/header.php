@@ -13,13 +13,22 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="router.php?op=2">Listar Alunos</a>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle"  data-toggle="dropdown">Alunos</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="router.php?op=2">Cadastrar Aluno</a>
+              <a class="dropdown-item" href="router.php?op=4">Listar Alunos</a>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="router.php?op=3">Cadastrar Cidade</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="router.php?op=5">Listar Cidades</a>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle"  data-toggle="dropdown">Cidades</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="router.php?op=5">Cadastrar Cidade</a>
+              <a class="dropdown-item" href="router.php?op=7">Listar Cidades</a>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

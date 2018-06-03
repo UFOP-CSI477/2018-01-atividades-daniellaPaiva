@@ -2,6 +2,7 @@
 
 namespace Model;
 
+use PDO;
 use Model\Database;
 
 class Cidade {
@@ -68,6 +69,22 @@ class Cidade {
  public function update() {
    die('update');
  }
+
+  public function select($nome){
+    try {
+      $sql = "SELECT * FROM cidades WHERE nome=:nome";
+
+      $result = $this->db->prepare($sql);
+      $result->bindParam(':nome', $nome, PDO::PARAM_STR);
+      $result->execute();
+
+      return $result->fetch(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+      echo "ERROR" . $e->getMessage();
+    }
+
+  }
 
  public function delete() {
 

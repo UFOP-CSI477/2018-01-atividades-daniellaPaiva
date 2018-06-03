@@ -30,6 +30,7 @@ class Database {
     if ($this->db === null) {
       //$db = new PDO('sqlite:academico.sqlite');
       $db = new PDO('mysql:host=localhost;dbname=academico', 'sistemaweb', '123456');
+      $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     return $db;
