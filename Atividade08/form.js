@@ -41,7 +41,7 @@ $(document).ready(function(){
 		validarCampo("#nome", "#campo_nome", "#alerta_nome");
 	});
 
-
+/*
 	$("#cidade").blur(function(){
 		if ( $("#cidade").val() == "0" ) {
          	$("#alerta_cidade").slideDown();
@@ -57,4 +57,22 @@ $(document).ready(function(){
         }
 
 	});
+*/
+	
+	$('salvar').click(function(){
+		if ( $("#cidade").val() == "0" ) {
+         	$("#alerta_cidade").slideDown();
+			// Adiciona a classe CSS de erro
+			$("#campo_cidade").addClass("has-error");
+			// Define o foco para o campo
+			$("#cidade").focus(); 
+        } else{
+        	// Remover a classe de erro;
+			$("#campo_cidade").removeClass("has-error");
+			// Ocultar o alerta - mensagem
+			$("#alerta_cidade").hide();
+        }
+
+	});
+
 });
