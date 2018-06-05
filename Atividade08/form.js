@@ -35,31 +35,15 @@ function validarCampo(campo, grupo, alerta) {
 // Aguardar que o documento esteja completo - carregado
 $(document).ready(function(){
 
-	console.log("Documento carregado.");
+	console.log("Documento.");
 
 	$("#nome").blur(function(){
 		validarCampo("#nome", "#campo_nome", "#alerta_nome");
 	});
 
-/*
-	$("#cidade").blur(function(){
-		if ( $("#cidade").val() == "0" ) {
-         	$("#alerta_cidade").slideDown();
-			// Adiciona a classe CSS de erro
-			$("#campo_cidade").addClass("has-error");
-			// Define o foco para o campo
-			$("#cidade").focus(); 
-        } else{
-        	// Remover a classe de erro;
-			$("#campo_cidade").removeClass("has-error");
-			// Ocultar o alerta - mensagem
-			$("#alerta_cidade").hide();
-        }
-
-	});
-*/
 	
-	$('salvar').click(function(){
+	$("#salvar").click(function(){
+
 		if ( $("#cidade").val() == "0" ) {
          	$("#alerta_cidade").slideDown();
 			// Adiciona a classe CSS de erro

@@ -57,7 +57,10 @@
 						<?php foreach( $lista as $e ): ?>
 						<option value="<?= $e['id'] ?>"><?= $e['nome'] ?></option>
 					<?php endforeach ?>
-				</select>					
+				</select>				
+				<div class="alert alert-danger" style="display: none" id="alerta_cidade">
+						<p>Informe a cidade para cadastro.</p>
+					</div>	
 			</div>
 		</div>
 		<div class="col-md-2"> 
@@ -71,7 +74,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4" align="center">
-			<input class="btn btn-success" type="submit" name="salvar" value="Cadastrar" />
+			<input class="btn btn-success" type="button" name="salvar" id="salvar" value="Cadastrar" />
 		</div>
 	</div>
 </form>
