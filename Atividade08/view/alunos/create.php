@@ -74,7 +74,7 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4" align="center">
-			<input class="btn btn-success" type="button" name="salvar" id="salvar" value="Cadastrar" />
+			<input class="btn btn-success" type="submit" name="salvar" id="salvar" value="Cadastrar" />
 		</div>
 	</div>
 </form>

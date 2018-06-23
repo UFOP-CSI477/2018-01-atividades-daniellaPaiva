@@ -17,8 +17,7 @@ $op = $_GET['op'];
 // Definição das rotas
 if ( $op == 1 ) {
   header("Location: index.php");
-} 
-else if ( $op == 2 ) {
+} else if ( $op == 2 ) {
   $alunoController = new AlunosController;
   $alunoController->listar();
 } else if ( $op == 3 ) {
