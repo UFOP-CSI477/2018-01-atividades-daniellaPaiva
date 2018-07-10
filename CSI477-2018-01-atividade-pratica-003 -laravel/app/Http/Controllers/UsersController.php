@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Procedure;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,21 +41,21 @@ class UsersController extends Controller
         return view('users.create', ['user' => $user]);
     }
 
-    public function atualizar($id, User $request){
+    public function atualizar($id, Request $request){
         $user = User::findOrFail($id);
 
-        //$user->update($request->all());
+        $user->update($request->all());
 
         \Session::flash('mensagem_sucesso', 'Usuário editado com sucesso');
 
         return \Redirect::to('users');
     }
 
-    public function salvar(User $request){
+    public function salvar(Request $request){
 
         $user = new User();
 
-        //$user = $user->create($request->all());
+        $user = $user->create($request->all());
 
         \Session::flash('mensagem_sucesso', 'Usuário criado com sucesso');
 
@@ -65,7 +66,7 @@ class UsersController extends Controller
     public function deletar($id){
         $user = User::findOrFail($id);
 
-        //$user->delete();
+        $user->delete();
 
         \Session::flash('mensagem_sucesso', 'Usuário excluído com sucesso');
 

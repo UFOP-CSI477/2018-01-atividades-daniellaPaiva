@@ -29,21 +29,21 @@ class ProceduresController extends Controller
         return view('procedures.create', ['proc' => $proc]);
     }
 
-    public function atualizar($id, Procedure $request){
+    public function atualizar($id, Request $request){
         $proc = Procedure::findOrFail($id);
 
-        //$proc->update($request->all());
+        $proc->update($request->all());
 
         \Session::flash('mensagem_sucesso', 'Procedimento editado com sucesso');
 
         return \Redirect::to('home');
     }
 
-    public function salvar(Procedure $request){
+    public function salvar(Request $request){
 
         $proc = new Procedure();
 
-        //$proc = $proc->create($request->all());
+        $proc = $proc->create($request->all());
 
         \Session::flash('mensagem_sucesso', 'Procedimento marcado com sucesso');
 
@@ -54,7 +54,7 @@ class ProceduresController extends Controller
     public function deletar($id){
         $proc = Procedure::findOrFail($id);
 
-        //$proc->delete();
+        $proc->delete();
 
         \Session::flash('mensagem_sucesso', 'Procedimento excluída com sucesso');
 

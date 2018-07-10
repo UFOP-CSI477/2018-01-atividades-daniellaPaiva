@@ -49,21 +49,21 @@ class TestsController extends Controller
         return view('tests.create', ['test' => $test]);
     }
 
-    public function atualizar($id, Test $request){
+    public function atualizar($id, Request $request){
         $test = Test::findOrFail($id);
 
-        //$test->update($request->all());
+        $test->update($request->all());
 
         \Session::flash('mensagem_sucesso', 'Exame editado com sucesso');
 
         return \Redirect::to('tests/'.$test->id.'/editar');
     }
 
-    public function salvar(Test $request){
+    public function salvar(Request $request){
 
         $test = new Test();
 
-        //$test = $test->create($request->all());
+        $test = $test->create($request->all());
 
         \Session::flash('mensagem_sucesso', 'Exame marcado com sucesso');
 

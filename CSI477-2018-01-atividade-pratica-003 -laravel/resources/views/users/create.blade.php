@@ -36,7 +36,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 {!! Form::label('email', 'Email') !!}
-                                {!! Form::input('text', 'email', null, ['class' => 'form-control', 'autofocus']) !!}
+                                {!! Form::input('email', 'email', null, ['class' => 'form-control', 'autofocus']) !!}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {!! Form::label('password', 'Senha') !!}
+                                {!! Form::input('password', 'password', null, ['class' => 'form-control', 'autofocus']) !!}
                             </div>
                         </div>
                         <br>
