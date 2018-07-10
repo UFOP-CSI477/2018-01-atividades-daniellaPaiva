@@ -17,7 +17,7 @@
                             @foreach($lista as $linha )
                                 <tr>
                                     <td>{{$linha->id}}</td>
-                                    <td>{{$linha->procedure_id}}</td>
+                                    <td>{{$linha->procname}}</td>
                                     <td>{{$linha->date}}</td>
                                 </tr>
                             @endforeach

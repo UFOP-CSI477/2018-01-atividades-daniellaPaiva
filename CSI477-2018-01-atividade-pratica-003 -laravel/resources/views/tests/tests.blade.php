@@ -18,8 +18,8 @@
                             @foreach($lista as $linha )
                                 <tr>
                                     <td>{{$linha->id}}</td>
-                                    <td>{{$linha->user_id}}</td>
-                                    <td>{{$linha->procedure_id}}</td>
+                                    <td>{{$linha->username}}</td>
+                                    <td>{{$linha->procname}}</td>
                                     <td>{{$linha->date}}</td>
                                 </tr>
                             @endforeach
