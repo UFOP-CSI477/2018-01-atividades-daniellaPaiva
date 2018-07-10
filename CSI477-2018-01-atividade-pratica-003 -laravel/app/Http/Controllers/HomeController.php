@@ -32,7 +32,7 @@ class HomeController extends Controller
         } elseif (Auth::user()->type == 'oper'){
             return view('procedures.home_oper', ['lista' => $procedures]);
 
-        }elseif (Auth::user()->type == 'patiente'){
+        }elseif (Auth::user()->type == 'patient'){
             return view('home', ['lista' => $procedures]);
 
         }

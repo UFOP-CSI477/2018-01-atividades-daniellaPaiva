@@ -30,7 +30,7 @@ class TestsController extends Controller
 
         if(Auth::user()->type == 'admin'){
             return view('tests.tests', ['lista' => $tests]);
-        }elseif (Auth::user()->type == 'patiente'){
+        }elseif (Auth::user()->type == 'patient'){
             return view('tests.mytests', ['lista' => $tests]);
 
         }
@@ -52,7 +52,7 @@ class TestsController extends Controller
     public function atualizar($id, Test $request){
         $test = Test::findOrFail($id);
 
-        $test->update($request->all());
+        //$test->update($request->all());
 
         \Session::flash('mensagem_sucesso', 'Exame editado com sucesso');
 
@@ -63,7 +63,7 @@ class TestsController extends Controller
 
         $test = new Test();
 
-        $test = $test->create($request->all());
+        //$test = $test->create($request->all());
 
         \Session::flash('mensagem_sucesso', 'Exame marcado com sucesso');
 

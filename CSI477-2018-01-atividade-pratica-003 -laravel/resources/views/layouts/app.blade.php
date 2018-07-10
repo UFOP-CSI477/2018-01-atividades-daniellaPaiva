@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('home') }}">
                     {{ config('app.nam', 'Laboratório') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,7 +39,7 @@
                         @if(Auth::user()->type == 'admin')
                             <ul class="navbar-nav mr-auto" >
                                 <li class="nav-item">
-                                    <a id="navbarDropdown" class="nav-link" href="{{ url('/tests') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link" href="{{ url('/tests') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ __('Exames') }} <span class="caret"></span>
                                     </a>
                                 </li>
@@ -48,15 +48,18 @@
                                         {{ __('Procedimentos') }} <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ url('/home') }}">{{ __('Procedimentos') }}</a>
-                                        <a class="dropdown-item" href="{{ url('/home') }}">{{ __('Procedimentos') }}</a>
+                                        <a class="dropdown-item" href="{{ url('/procedures/novo') }}">{{ __('Novo') }}</a>
+                                        <a class="dropdown-item" href="{{ url('/home') }}">{{ __('Lista') }}</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('/users') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ __('Usuários') }} <span class="caret"></span>
-
                                     </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('/users/novo') }}">{{ __('Novo') }}</a>
+                                        <a class="dropdown-item" href="{{ url('/users') }}">{{ __('Lista') }}</a>
+                                    </div>
                                 </li>
                             </ul>
                         @elseif(Auth::user()->type == 'patient')
@@ -71,7 +74,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="navbarDropdown" class="nav-link" href="{{ url('/home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link" href="{{ url('/home') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ __('Procedimentos') }} <span class="caret"></span>
                                     </a>
                                 </li>
